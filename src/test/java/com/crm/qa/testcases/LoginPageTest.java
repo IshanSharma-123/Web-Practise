@@ -1,5 +1,7 @@
 package com.crm.qa.testcases;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -33,19 +35,24 @@ public class LoginPageTest extends TestBase{
 	public void crmLogoImageTest(){
 		boolean flag = loginPage.validateCRMImage();
 		Assert.assertTrue(flag);
-	}*/
+	}
 	
 	@Test(priority=3)
-	public void loginTest(){
-		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+	public void loginTest() throws InterruptedException, IOException{
+		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"),prop.getProperty("Emailidofperson"),prop.getProperty("subjectofmail"),prop.getProperty("matterofmail"));
+	}*/
+	
+	@Test(priority=1)
+	public void TCEloginTest() throws InterruptedException, IOException{
+		
+		 loginPage.TCElogin(prop.getProperty("school"), prop.getProperty("User"),prop.getProperty("Password"));
+		 
 	}
 	
+
 	
 	
-	@AfterMethod
-	public void tearDown(){
-		driver.quit();
-	}
+	
 	
 	
 	

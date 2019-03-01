@@ -6,8 +6,7 @@
       <class name="com.crm.qa.testcases.LoginPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="loginTest"/>
+          <include name="TCEloginTest"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.LoginPageTest -->
     </classes>
